@@ -1,5 +1,22 @@
 # Ethereum Explorer
 
+## Endpoints
+
+[Find all the endpoints here](https://docs.substreams.dev/reference-and-specs/chains-and-endpoints#official-endpoints)
+- Arbitrum Mainnet: https://arb-one.streamingfast.io:443
+
+```
+substreams run -e arb-one.streamingfast.io:443 substreams.yaml map_block_meta --start-block 269630912 --stop-block +1
+```
+## Aave
+
+- [Deployed contract addresses](https://aave.com/docs/resources/addresses)
+
+### Aave V3 Contract Addresses (Arbitrum)
+
+- **Pool:** 0x794a61358D6845594F94dc1DB02A252b5b4814aD
+---
+
 The Ethereum Explorer consists of several Substreams modules showcasing the most basic operations that you can perform with Substreams on the Ethereum blockchain.
 
 ## Before You Begin

@@ -1,25 +1,49 @@
-# Ethereum Explorer
+# Aave V3 Arbitrum Liquidation Bot
 
 ## Endpoints
 
 [Find all the endpoints here](https://docs.substreams.dev/reference-and-specs/chains-and-endpoints#official-endpoints)
+
 - Arbitrum Mainnet: https://arb-one.streamingfast.io:443
 
 ```
 substreams run -e arb-one.streamingfast.io:443 substreams.yaml map_block_meta --start-block 269630912 --stop-block +1
 ```
-## Aave
+
+# Aave V3 Arbitrum
 
 - [Deployed contract addresses](https://aave.com/docs/resources/addresses)
 
-### Aave V3 Contract Addresses (Arbitrum)
-
 - **Pool:** 0x794a61358D6845594F94dc1DB02A252b5b4814aD
+- **UiPoolDataProvider:** 0xc0179321f0825c3e0F59Fe7Ca4E40557b97797a3
+- **PoolAddressesProvider:** 0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb
+
 ---
 
-The Ethereum Explorer consists of several Substreams modules showcasing the most basic operations that you can perform with Substreams on the Ethereum blockchain.
+## UiPoolDataProvider
+
+- **Address:** 0xc0179321f0825c3e0F59Fe7Ca4E40557b97797a3
+- [UiPoolDataProvider docs](https://aave.com/docs/developers/smart-contracts/view-contracts#uipooldataprovider)
+-
+
+Contract that returns an array of all reserve or user data for a particular market (for example, liquidity, token addresses, rate strategy), used by the Aave Interface to display Markets and Dashboard data. Compatible with both V2 and V3 of the Aave Protocol.
+
+## PoolAddressesProvider
+
+- **Address:** [0xa97684ead0e402dC232d5A977953DF7ECBaB3CDb](https://arbiscan.io/address/0xa97684ead0e402dc232d5a977953df7ecbab3cdb)
+- PoolAddressesProvider [docs](https://aave.com/docs/developers/smart-contracts/pool-addresses-provider)
+
+The PoolAddressesProvider contract is the main registry of addresses that are part of, or connected to the Protocol, including permissioned roles. It acts as a factory of proxies and is the admin of those, and therefore has the right to change its implementations.
+
+The addresses provider manages various protocol modules and has the ability to update pointers (e.g. update the ACLManager contract) or update the implementation of proxy contracts (e.g. update the Pool implementation).
+
+It specifies the initial holder of the DEFAULT_ADMIN_ROLE, it is immutable, and the address will never change.
+
+---
 
 ## Before You Begin
+
+The Ethereum Explorer consists of several Substreams modules showcasing the most basic operations that you can perform with Substreams on the Ethereum blockchain.
 
 Make sure you have the [Substreams CLI installed](https://substreams.streamingfast.io/getting-started/installing-the-cli), and you know the [basic structure of a Substreams module](https://substreams.streamingfast.io/documentation/intro-getting-started/intro-evm). You must also provide an [authentication token](https://substreams.streamingfast.io/documentation/consume/authentication).
 

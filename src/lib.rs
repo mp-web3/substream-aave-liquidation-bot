@@ -1,5 +1,7 @@
 mod abi;
 mod pb;
+mod map_pool_events;
+mod util;
 use hex_literal::hex;
 use pb::contract::v1 as contract;
 use substreams::Hex;
@@ -8,7 +10,9 @@ use substreams_ethereum::Event;
 
 #[allow(unused_imports)]
 use num_traits::cast::ToPrimitive;
+#[allow(unused_imports)]
 use std::str::FromStr;
+#[allow(unused_imports)]
 use substreams::scalar::BigDecimal;
 
 substreams_ethereum::init!();

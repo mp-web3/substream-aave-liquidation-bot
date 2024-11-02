@@ -1,0 +1,699 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package contract.v1;
+message Events {
+    repeated L2Pool_BackUnbacked l2_pool_back_unbackeds = 1;
+    repeated L2Pool_Borrow l2_pool_borrows = 2;
+    repeated L2Pool_FlashLoan l2_pool_flash_loans = 3;
+    repeated L2Pool_IsolationModeTotalDebtUpdated l2_pool_isolation_mode_total_debt_updateds = 4;
+    repeated L2Pool_LiquidationCall l2_pool_liquidation_calls = 5;
+    repeated L2Pool_MintUnbacked l2_pool_mint_unbackeds = 6;
+    repeated L2Pool_MintedToTreasury l2_pool_minted_to_treasuries = 7;
+    repeated L2Pool_Repay l2_pool_repays = 8;
+    repeated L2Pool_ReserveDataUpdated1 l2_pool_reserve_data_updated_1s = 9;
+    repeated L2Pool_ReserveDataUpdated2 l2_pool_reserve_data_updated_2s = 10;
+    repeated L2Pool_ReserveUsedAsCollateralDisabled l2_pool_reserve_used_as_collateral_disableds = 11;
+    repeated L2Pool_ReserveUsedAsCollateralEnabled l2_pool_reserve_used_as_collateral_enableds = 12;
+    repeated L2Pool_Supply l2_pool_supplies = 13;
+    repeated L2Pool_Upgraded l2_pool_upgradeds = 14;
+    repeated L2Pool_UserEModeSet l2_pool_user_e_mode_sets = 15;
+    repeated L2Pool_Withdraw l2_pool_withdraws = 16;
+}
+message Calls {
+    repeated L2Pool_AdminCall l2_pool_call_admins = 1;
+    repeated L2Pool_BackUnbackedCall l2_pool_call_back_unbackeds = 2;
+    repeated L2Pool_Borrow1call l2_pool_call_borrow_1s = 3;
+    repeated L2Pool_Borrow2call l2_pool_call_borrow_2s = 4;
+    repeated L2Pool_ConfigureEModeCategoryCall l2_pool_call_configure_e_mode_categories = 5;
+    repeated L2Pool_ConfigureEModeCategoryBorrowableBitmapCall l2_pool_call_configure_e_mode_category_borrowable_bitmaps = 6;
+    repeated L2Pool_ConfigureEModeCategoryCollateralBitmapCall l2_pool_call_configure_e_mode_category_collateral_bitmaps = 7;
+    repeated L2Pool_DepositCall l2_pool_call_deposits = 8;
+    repeated L2Pool_DropReserveCall l2_pool_call_drop_reserves = 9;
+    repeated L2Pool_FinalizeTransferCall l2_pool_call_finalize_transfers = 10;
+    repeated L2Pool_FlashLoanCall l2_pool_call_flash_loans = 11;
+    repeated L2Pool_FlashLoanSimpleCall l2_pool_call_flash_loan_simples = 12;
+    repeated L2Pool_GetLiquidationGracePeriodCall l2_pool_call_get_liquidation_grace_periods = 13;
+    repeated L2Pool_ImplementationCall l2_pool_call_implementations = 14;
+    repeated L2Pool_InitReserveCall l2_pool_call_init_reserves = 15;
+    repeated L2Pool_Initialize1call l2_pool_call_initialize_1s = 16;
+    repeated L2Pool_Initialize2call l2_pool_call_initialize_2s = 17;
+    repeated L2Pool_LiquidationCall1call l2_pool_call_liquidation_call_1s = 18;
+    repeated L2Pool_LiquidationCall2call l2_pool_call_liquidation_call_2s = 19;
+    repeated L2Pool_MintToTreasuryCall l2_pool_call_mint_to_treasuries = 20;
+    repeated L2Pool_MintUnbackedCall l2_pool_call_mint_unbackeds = 21;
+    repeated L2Pool_Repay1call l2_pool_call_repay_1s = 22;
+    repeated L2Pool_Repay2call l2_pool_call_repay_2s = 23;
+    repeated L2Pool_RepayWithATokens1call l2_pool_call_repay_with_a_tokens_1s = 24;
+    repeated L2Pool_RepayWithATokens2call l2_pool_call_repay_with_a_tokens_2s = 25;
+    repeated L2Pool_RepayWithPermit1call l2_pool_call_repay_with_permit_1s = 26;
+    repeated L2Pool_RepayWithPermit2call l2_pool_call_repay_with_permit_2s = 27;
+    repeated L2Pool_RescueTokensCall l2_pool_call_rescue_tokens = 28;
+    repeated L2Pool_ResetIsolationModeTotalDebtCall l2_pool_call_reset_isolation_mode_total_debts = 29;
+    repeated L2Pool_SetConfigurationCall l2_pool_call_set_configurations = 30;
+    repeated L2Pool_SetLiquidationGracePeriodCall l2_pool_call_set_liquidation_grace_periods = 31;
+    repeated L2Pool_SetReserveInterestRateStrategyAddressCall l2_pool_call_set_reserve_interest_rate_strategy_addresses = 32;
+    repeated L2Pool_SetUserEModeCall l2_pool_call_set_user_e_modes = 33;
+    repeated L2Pool_SetUserUseReserveAsCollateral1call l2_pool_call_set_user_use_reserve_as_collateral_1s = 34;
+    repeated L2Pool_SetUserUseReserveAsCollateral2call l2_pool_call_set_user_use_reserve_as_collateral_2s = 35;
+    repeated L2Pool_Supply1call l2_pool_call_supply_1s = 36;
+    repeated L2Pool_Supply2call l2_pool_call_supply_2s = 37;
+    repeated L2Pool_SupplyWithPermit1call l2_pool_call_supply_with_permit_1s = 38;
+    repeated L2Pool_SupplyWithPermit2call l2_pool_call_supply_with_permit_2s = 39;
+    repeated L2Pool_SyncIndexesStateCall l2_pool_call_sync_indexes_states = 40;
+    repeated L2Pool_SyncRatesStateCall l2_pool_call_sync_rates_states = 41;
+    repeated L2Pool_UpdateBridgeProtocolFeeCall l2_pool_call_update_bridge_protocol_fees = 42;
+    repeated L2Pool_UpdateFlashloanPremiumsCall l2_pool_call_update_flashloan_premiums = 43;
+    repeated L2Pool_UpgradeToCall l2_pool_call_upgrade_tos = 44;
+    repeated L2Pool_UpgradeToAndCallCall l2_pool_call_upgrade_to_and_calls = 45;
+    repeated L2Pool_Withdraw1call l2_pool_call_withdraw_1s = 46;
+    repeated L2Pool_Withdraw2call l2_pool_call_withdraw_2s = 47;
+}
+message EventsCalls {
+    Events events = 1;
+    Calls calls = 2;
+}
+message L2Pool_BackUnbacked {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes backer = 6;
+    string amount = 7;
+    string fee = 8;
+}
+message L2Pool_Borrow {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes on_behalf_of = 7;
+    string amount = 8;
+    uint64 interest_rate_mode = 9;
+    string borrow_rate = 10;
+    uint64 referral_code = 11;
+}
+message L2Pool_FlashLoan {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes target = 5;
+    bytes initiator = 6;
+    bytes asset = 7;
+    string amount = 8;
+    uint64 interest_rate_mode = 9;
+    string premium = 10;
+    uint64 referral_code = 11;
+}
+message L2Pool_IsolationModeTotalDebtUpdated {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes asset = 5;
+    string total_debt = 6;
+}
+message L2Pool_LiquidationCall {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes collateral_asset = 5;
+    bytes debt_asset = 6;
+    bytes user = 7;
+    string debt_to_cover = 8;
+    string liquidated_collateral_amount = 9;
+    bytes liquidator = 10;
+    bool receive_a_token = 11;
+}
+message L2Pool_MintUnbacked {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes on_behalf_of = 7;
+    string amount = 8;
+    uint64 referral_code = 9;
+}
+message L2Pool_MintedToTreasury {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    string amount_minted = 6;
+}
+message L2Pool_Repay {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes repayer = 7;
+    string amount = 8;
+    bool use_a_tokens = 9;
+}
+message L2Pool_ReserveDataUpdated1 {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    string liquidity_rate = 6;
+    string stable_borrow_rate = 7;
+    string variable_borrow_rate = 8;
+    string liquidity_index = 9;
+    string variable_borrow_index = 10;
+}
+message L2Pool_ReserveDataUpdated2 {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    string liquidity_rate = 6;
+    string stable_borrow_rate = 7;
+    string variable_borrow_rate = 8;
+    string liquidity_index = 9;
+    string variable_borrow_index = 10;
+}
+message L2Pool_ReserveUsedAsCollateralDisabled {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+}
+message L2Pool_ReserveUsedAsCollateralEnabled {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+}
+message L2Pool_Supply {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes on_behalf_of = 7;
+    string amount = 8;
+    uint64 referral_code = 9;
+}
+message L2Pool_Upgraded {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes implementation = 5;
+}
+message L2Pool_UserEModeSet {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes user = 5;
+    uint64 category_id = 6;
+}
+message L2Pool_Withdraw {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes to = 7;
+    string amount = 8;
+}
+  
+message L2Pool_AdminCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes output_param0 = 6;
+}
+message L2Pool_BackUnbackedCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    string fee = 8;
+    string output_param0 = 9;
+}
+message L2Pool_Borrow1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    string interest_rate_mode = 8;
+    uint64 referral_code = 9;
+    bytes on_behalf_of = 10;
+}
+message L2Pool_Borrow2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+}
+message L2Pool_ConfigureEModeCategoryCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    uint64 id = 6;
+}
+message L2Pool_ConfigureEModeCategoryBorrowableBitmapCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    uint64 id = 6;
+    string borrowable_bitmap = 7;
+}
+message L2Pool_ConfigureEModeCategoryCollateralBitmapCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    uint64 id = 6;
+    string collateral_bitmap = 7;
+}
+message L2Pool_DepositCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    bytes on_behalf_of = 8;
+    uint64 referral_code = 9;
+}
+message L2Pool_DropReserveCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+}
+message L2Pool_FinalizeTransferCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    bytes from = 7;
+    bytes to = 8;
+    string amount = 9;
+    string balance_from_before = 10;
+    string balance_to_before = 11;
+}
+message L2Pool_FlashLoanCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes receiver_address = 6;
+    repeated bytes assets = 7;
+    repeated string amounts = 8;
+    repeated string interest_rate_modes = 9;
+    bytes on_behalf_of = 10;
+    bytes params = 11;
+    uint64 referral_code = 12;
+}
+message L2Pool_FlashLoanSimpleCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes receiver_address = 6;
+    bytes asset = 7;
+    string amount = 8;
+    bytes params = 9;
+    uint64 referral_code = 10;
+}
+message L2Pool_GetLiquidationGracePeriodCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    uint64 output_param0 = 7;
+}
+message L2Pool_ImplementationCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes output_param0 = 6;
+}
+message L2Pool_InitReserveCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    bytes a_token_address = 7;
+    bytes variable_debt_address = 8;
+    bytes interest_rate_strategy_address = 9;
+}
+message L2Pool_Initialize1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes u_logic = 6;
+    bytes u_data = 7;
+}
+message L2Pool_Initialize2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes provider = 6;
+}
+message L2Pool_LiquidationCall1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes collateral_asset = 6;
+    bytes debt_asset = 7;
+    bytes user = 8;
+    string debt_to_cover = 9;
+    bool receive_a_token = 10;
+}
+message L2Pool_LiquidationCall2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args1 = 6;
+    bytes args2 = 7;
+}
+message L2Pool_MintToTreasuryCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    repeated bytes assets = 6;
+}
+message L2Pool_MintUnbackedCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    bytes on_behalf_of = 8;
+    uint64 referral_code = 9;
+}
+message L2Pool_Repay1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+    string output_param0 = 7;
+}
+message L2Pool_Repay2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    string interest_rate_mode = 8;
+    bytes on_behalf_of = 9;
+    string output_param0 = 10;
+}
+message L2Pool_RepayWithATokens1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    string interest_rate_mode = 8;
+    string output_param0 = 9;
+}
+message L2Pool_RepayWithATokens2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+    string output_param0 = 7;
+}
+message L2Pool_RepayWithPermit1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+    bytes r = 7;
+    bytes s = 8;
+    string output_param0 = 9;
+}
+message L2Pool_RepayWithPermit2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    string interest_rate_mode = 8;
+    bytes on_behalf_of = 9;
+    string deadline = 10;
+    uint64 permit_v = 11;
+    bytes permit_r = 12;
+    bytes permit_s = 13;
+    string output_param0 = 14;
+}
+message L2Pool_RescueTokensCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes token = 6;
+    bytes to = 7;
+    string amount = 8;
+}
+message L2Pool_ResetIsolationModeTotalDebtCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+}
+message L2Pool_SetConfigurationCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+}
+message L2Pool_SetLiquidationGracePeriodCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    uint64 until = 7;
+}
+message L2Pool_SetReserveInterestRateStrategyAddressCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    bytes rate_strategy_address = 7;
+}
+message L2Pool_SetUserEModeCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    uint64 category_id = 6;
+}
+message L2Pool_SetUserUseReserveAsCollateral1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+}
+message L2Pool_SetUserUseReserveAsCollateral2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    bool use_as_collateral = 7;
+}
+message L2Pool_Supply1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    bytes on_behalf_of = 8;
+    uint64 referral_code = 9;
+}
+message L2Pool_Supply2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+}
+message L2Pool_SupplyWithPermit1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    bytes on_behalf_of = 8;
+    uint64 referral_code = 9;
+    string deadline = 10;
+    uint64 permit_v = 11;
+    bytes permit_r = 12;
+    bytes permit_s = 13;
+}
+message L2Pool_SupplyWithPermit2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+    bytes r = 7;
+    bytes s = 8;
+}
+message L2Pool_SyncIndexesStateCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+}
+message L2Pool_SyncRatesStateCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+}
+message L2Pool_UpdateBridgeProtocolFeeCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    string protocol_fee = 6;
+}
+message L2Pool_UpdateFlashloanPremiumsCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    string flash_loan_premium_total = 6;
+    string flash_loan_premium_to_protocol = 7;
+}
+message L2Pool_UpgradeToCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes new_implementation = 6;
+}
+message L2Pool_UpgradeToAndCallCall {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes new_implementation = 6;
+    bytes data = 7;
+}
+message L2Pool_Withdraw1call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes asset = 6;
+    string amount = 7;
+    bytes to = 8;
+    string output_param0 = 9;
+}
+message L2Pool_Withdraw2call {
+    string call_tx_hash = 1;
+    google.protobuf.Timestamp call_block_time = 2;
+    uint64 call_block_number = 3;
+    uint64 call_ordinal = 4;
+    bool call_success = 5;
+    bytes args = 6;
+    string output_param0 = 7;
+}

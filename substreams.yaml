@@ -4,11 +4,12 @@ package:
   version: v0.1.0
 
 imports:
-    ethcommon: https://spkg.io/streamingfast/ethereum-common-v0.3.0.spkg
+  ethcommon: https://spkg.io/streamingfast/ethereum-common-v0.3.0.spkg
 
 protobuf:
   files:
     - contract.proto
+    - events.proto
   importPaths:
     - ./proto
   excludePaths:
@@ -21,7 +22,18 @@ binaries:
     file: ./target/wasm32-unknown-unknown/release/substreams.wasm
 
 modules:
-
+  - name: map_pool_events
+    kind: map
+    initialBlock: 7742429
+    blockFilter:
+      module: ethcommon:index_events
+      query:
+        string: evt_addr:0x794a61358d6845594f94dc1db02a252b5b4814ad
+    inputs:
+      - params: string
+      - source: sf.ethereum.type.v2.Block
+    output:
+      type: proto:contract.v1.Events
   - name: map_events
     kind: map
     initialBlock: 7742429
@@ -53,3 +65,7 @@ modules:
     output:
       type: proto:contract.v1.EventsCalls
 network: arbitrum
+
+params:
+  # L2 Pool Arbitrum Address
+  map_pool_events: "0x794a61358D6845594F94dc1DB02A252b5b4814aD"

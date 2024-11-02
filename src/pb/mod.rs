@@ -6,6 +6,13 @@ pub mod contract {
         // @@protoc_insertion_point(contract.v1)
     }
 }
+pub mod events {
+    // @@protoc_insertion_point(attribute:events.v1)
+    pub mod v1 {
+        include!("events.v1.rs");
+        // @@protoc_insertion_point(events.v1)
+    }
+}
 pub mod sf {
     pub mod ethereum {
         pub mod r#type {

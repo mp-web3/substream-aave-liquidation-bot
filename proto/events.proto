@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package events.v1;
+message Events {
+    repeated L2Pool_Borrow l2_pool_borrows = 1;
+    repeated L2Pool_Repay l2_pool_repays = 2;
+    repeated L2Pool_Supply l2_pool_supplies = 3;
+    repeated L2Pool_Withdraw l2_pool_withdraws = 4;
+    repeated L2Pool_FlashLoan l2_pool_flash_loans = 5;
+    repeated L2Pool_LiquidationCall l2_pool_liquidation_calls = 6;
+}
+
+message L2Pool_Borrow {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes on_behalf_of = 7;
+    string amount = 8;
+    uint64 interest_rate_mode = 9;
+    string borrow_rate = 10;
+    uint64 referral_code = 11;
+}
+
+message L2Pool_Repay {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes repayer = 7;
+    string amount = 8;
+    bool use_a_tokens = 9;
+}
+
+message L2Pool_Supply {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes on_behalf_of = 7;
+    string amount = 8;
+    uint64 referral_code = 9;
+}
+message L2Pool_Withdraw {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes reserve = 5;
+    bytes user = 6;
+    bytes to = 7;
+    string amount = 8;
+}
+
+message L2Pool_FlashLoan {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes target = 5;
+    bytes initiator = 6;
+    bytes asset = 7;
+    string amount = 8;
+    uint64 interest_rate_mode = 9;
+    string premium = 10;
+    uint64 referral_code = 11;
+}
+
+message L2Pool_LiquidationCall {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes collateral_asset = 5;
+    bytes debt_asset = 6;
+    bytes user = 7;
+    string debt_to_cover = 8;
+    string liquidated_collateral_amount = 9;
+    bytes liquidator = 10;
+    bool receive_a_token = 11;
+}
